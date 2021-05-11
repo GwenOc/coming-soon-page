@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>index</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="bgimg">
+  <div class="topleft">
+    <p>Roscoff.com</p>
+  </div>
+  <div class="middle">
+    <h1>BIENVENUE SUR ROSCOFF.COM</h1>
+    <hr>
+    <h2>Le site est actuellement en construction</h2>
+    <h3>Nous esperons vous accueillir très bientôt !</h3>
+    <div id="demo"></div>
+    
+  </div>
+  <div class="bottomleft">
+    <p>A bientôt !</p>
+  </div>
+</div>
+<script type="text/javascript">
+	// Set the date we're counting down to
+var countDownDate = new Date("May 30, 2021 15:37:25").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get todays date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now an the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var jours = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var heures = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var secondes = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in an element with id="demo"
+  document.getElementById("demo").innerHTML = jours + "j " + heures + "h "
+  + minutes + "m " + secondes + "s ";
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+
+</script>
+</body>
+</html>
